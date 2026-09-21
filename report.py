@@ -16,7 +16,7 @@ REPORT_DIR = os.path.join(os.path.dirname(__file__), "data", "reports")
 
 FOOTER = (
     "\n---\n"
-    "*本报告由手写最小内核 Agent 自动生成（任务理解: DeepSeek JSON 模式 / 工具调用: "
+    "*本报告由 AI Agent 自动生成（无框架实现；任务理解: DeepSeek JSON 模式 / 工具调用: "
     "Tavily 实时搜索 + 规则定价 / 长期记忆: results.json）。关键数字均已标注来源，"
     "但 AI 生成内容可能存在偏差，使用前请人工抽核核心数据。*\n"
 )
@@ -34,7 +34,7 @@ def write_report(parsed: dict, answer: str) -> str:
         f"- **品类关键词**: {category_en}\n"
         f"- **目标市场**: {parsed.get('market') or '未指定'}\n"
         f"- **生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-        f"- **生成方式**: 手写最小内核 Agent（DeepSeek + Tavily 实时检索）\n\n---\n\n"
+        f"- **生成方式**: AI Agent · 无框架实现（DeepSeek + Tavily 实时检索）\n\n---\n\n"
     )
     with open(path, "w", encoding="utf-8") as f:  # Windows 必须显式 utf-8
         f.write(header + answer + FOOTER)
