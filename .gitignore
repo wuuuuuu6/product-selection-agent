@@ -1,0 +1,5 @@
+# 密钥永远不进版本库
+.env
+__pycache__/
+# 长期记忆是运行产物不入库；reports/ 是项目成果展示，入库
+data/results.json
